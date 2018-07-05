@@ -1,0 +1,405 @@
+/*===============================
+=            Imports            =
+===============================*/
+
+@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+/*=====  End of Imports  ======*/
+
+
+html, body{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	display: flex;
+	min-height: 100vh;
+	flex-wrap: wrap;
+	font-family: 'Poppins', sans-serif;
+}
+
+div.wrapper
+{
+	width: 100%;
+}
+footer
+{
+	width: 100%;
+	align-self: flex-end;
+	background: white;
+	border-top: 1px solid rgba(64,71,75,0.1);
+}
+footer h5 {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+footer h4, footer h5, footer h6 {
+    padding-bottom: 30px;
+    margin: 0px;
+}
+footer ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+footer ul li {
+    margin-bottom: 10px;
+}
+footer a {
+    text-decoration: none;
+    -webkit-transition: color 0.6s;
+    -o-transition: color 0.6s;
+    transition: color 0.6s;
+}
+/*========================================
+=            Nuestro Grid css            =
+========================================*/
+
+
+/*scroll */
+::-webkit-scrollbar{
+	width: 8px;
+}
+::-webkit-scrollbar-track {
+	background-color: #E6E4E4;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #AEAEAE;/*#D9983E;  */
+	border-radius: 5px; 
+}
+::-o-scrollbar{
+	width: 8px;
+}
+::-o-scrollbar-track {
+	background-color: #E6E4E4;
+}
+
+::-o-scrollbar-thumb {
+	background-color: #AEAEAE;/*#D9983E;  */
+	border-radius: 5px; 
+}
+::-moz-scrollbar{
+	width: 8px;
+}
+::-moz-scrollbar-track {
+	background-color: #E6E4E4;
+}
+
+::-moz-scrollbar-thumb {
+	background-color: #AEAEAE;/*#D9983E;  */
+	border-radius: 5px; 
+}
+/*grid*/
+.fila	
+{
+	width: 90%;
+	margin: 2% auto;
+	/*background-color: #7AD5E2;*/
+}
+.columna
+{
+	box-sizing: border-box;
+	float: left;
+	margin-right: 2%;
+	margin-bottom: 2%;
+	padding: 1em;
+	width: 100%;
+	overflow: hidden;
+	/*background-color: #E27A9A;*/
+}
+.total > .columna
+{
+	margin-right: 0px;
+}
+/*definir los brackpoints*/
+
+/*
+	small 	480px up
+	medium 	768px up
+	large 	1024px up;
+*/
+
+@media (min-width: 480px)
+{
+	/* 4 columnas y 6 columnas son 2 small*/
+	.cuatro-columnas .columna,
+	.seis-columnas .columna
+	{
+		width: 49%;
+	}
+	.cuatro-columnas .columna:nth-child(2n),
+	.seis-columnas .columna:nth-child(2n)
+	{
+		margin-right: 0;
+	}
+
+	.doce-columnas .columna
+	{
+		width: 32%;
+	}
+	.doce-columnas .columna:nth-child(3n)
+	{
+		margin-right: 0;
+	}
+}
+
+@media (min-width: 768px)
+{
+
+	/* right y left sidebar */
+	.right-sidebar .sidebar,
+	.left-sidebar .sidebar
+	{
+		width: 23.5%;
+	}
+	.right-sidebar .content,
+	.left-sidebar .content
+	{
+		width: 74.5%;
+	}
+
+	.right-sidebar .sidebar 
+	{
+		margin-right: 0;
+	}
+	.left-sidebar .content
+	{
+		margin-right: 0;
+	}
+
+	/* 3  columnas */
+
+	.tres-columnas .columna
+	{
+		width: 32%;
+	}
+	.tres-columnas .columna:nth-child(3n)
+	{
+		margin-right: 0;
+	}
+
+/*doce columnas son cuatro*/
+	.doce-columnas .columna
+	{
+		width: 23.5%;
+	}
+
+	.doce-columnas .columna:nth-child(3n)
+	{
+		margin-right: 2%;
+	}
+	.doce-columnas .columna:nth-child(4n)
+	{
+		margin-right: 0;
+	}
+}
+
+@media (min-width: 1024px)
+{
+	/* 2  columnas */
+	.dos-columnas .columna
+	{
+		width: 49%;
+	}
+	.dos-columnas .columna:nth-child(2n)
+	{
+		margin-right: 0;
+	}
+
+	/* 4  columnas */
+
+	.cuatro-columnas .columna
+	{
+		width: 23.5%;
+	}
+	.cuatro-columnas .columna:nth-child(2n)
+	{
+		margin-right: 2%;
+	}
+	.cuatro-columnas .columna:nth-child(4n)
+	{
+		margin-right: 0;
+	}
+
+	/* 6  columnas */
+
+	.seis-columnas .columna
+	{
+		width: 15%;
+	}
+	.seis-columnas .columna:nth-child(2n)
+	{
+		margin-right: 2%;
+	}	
+	.seis-columnas .columna:nth-child(6n)
+	{
+		margin-right: 0;
+	}
+
+	/* 12  columnas */
+
+	.doce-columnas .columna
+	{
+		width: 6.5%;
+	}
+	.doce-columnas .columna:nth-child(4n)
+	{
+		margin-right: 2%;
+	}
+	.doce-columnas .columna:nth-child(12n)
+	{
+		margin-right: 0;
+	}
+
+}
+
+/*=====  End of Nuestro Grid css  ======*/
+
+
+
+/*========================================
+=            Section Menu nav            =
+========================================*/
+
+nav{
+	position: fixed;
+	top: 0; left: 0;
+	width: 100%;
+	height: 100px;
+	padding: 10px 100px;
+	box-sizing: border-box;
+	transition: .3s;
+}
+
+nav.small
+{
+	height: 70px;
+	padding: 5px 100px;
+	background: white;
+	box-shadow: 0 0px 0 1px rgba(64,71,75,0.1);
+    
+}
+
+nav .logo{
+	padding: 0px 20px;
+	height: 80px;
+	float: left;
+	font-size: 24px;
+	transition: .3s;
+}
+
+nav.small .logo{
+	padding: 0px 12px;
+	height: 46px;
+}
+
+nav ul{
+	list-style: none;
+	float: right;
+	margin: 0; padding: 0;
+	display: flex;
+}
+nav ul li
+{
+	list-style: none;
+}
+
+nav ul li a{
+	line-height: 80px;
+	padding: 12px 30px;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: .3s;
+}
+
+nav.small ul li a{
+	line-height: 60px;
+}
+
+/*=====  End of Section Menu nav  ======*/
+
+
+
+/*======================================
+=            Section slider            =
+======================================*/
+
+section.slider
+{
+	width: 100%;
+	height: 100vh;
+	/*background: url('https://img00.deviantart.net/f7db/i/2017/036/a/4/landscape__1____forest_mountain_by_ncoll36-daxsdd5.jpg');*/
+	background: url('https://img00.deviantart.net/715f/i/2017/034/a/8/landscape__2____mountain_river_by_ncoll36-daxsrrg.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+
+/*=====  End of Section slider  ======*/
+
+
+section.slider p.line
+{
+	display: block;
+	height: auto;
+	width: auto;
+	color: white;
+	font-family: 'Anonymous Pro', monospace;
+	position: relative;
+	top: 70%;
+	margin:  0 auto;
+	/*border-right: 2px solid white;*/
+	font-size: 1.94em;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	transform: translateY(-50%);
+}
+
+
+/* Animation */
+/*
+p.anim-typeWriter
+{
+	animation: TypeWriter 4s steps(25) 1s normal both,
+	blinkTextCursor 500ms steps(25) infinite normal;
+}
+
+@keyframes TypeWriter {
+	from {
+		width: 0;
+	}
+	to {
+		width: 400px;
+	}
+	
+}
+@keyframes blinkTextCursor {
+	from {
+		border-right-color: : white;
+	}	
+	to {
+		border-right-color: transparent;
+	}
+
+}*/
+/*=======================================
+=            Seciont content            =
+=======================================*/
+
+section.content
+{
+	margin-top: 80px;
+}
+
+section.content p,
+section.content h2
+{
+	width: 900px; margin: 30px auto; text-align: justify;
+	font-size: 20px;
+	line-height: 30px;
+}
+
+
+/*=====  End of Seciont content  ======*/
