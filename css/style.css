@@ -7,6 +7,10 @@
 
 /*=====  End of Imports  ======*/
 
+::selection {
+ 	background: #e74c3c;
+	color: white;
+}
 
 html, body{
 	margin: 0;
@@ -269,7 +273,10 @@ footer a , footer p, footer center{
 =            Section Menu nav            =
 ========================================*/
 
-nav{
+
+nav,
+div.hamburguer-btn
+{
 	position: fixed;
 	top: 0; left: 0;
 	width: 100%;
@@ -280,20 +287,84 @@ nav{
 	transition: .3s;
 }
 
+div.logo-business
+{
+	background: #ea3b50;
+	opacity: .6;
+	width: 150px;
+	height: 100%;
+	padding: 0px 20px;
+	float: left;
+	font-size: 24px;
+	transition: .3s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 nav.small
 {
 	height: 70px;
 	padding: 5px 100px;
 	background: white;
 	box-shadow: 0 0px 0 1px rgba(64,71,75,0.1);
-    
 }
-nav .logo{
-	padding: 0px 20px;
-	height: 80px;
-	float: left;
-	font-size: 24px;
+div.hamburguer-btn
+{
+	height: 50px;
+	box-shadow: 0 0px 0 1px rgba(64,71,75,0.1);
+	background: white;
+	right: 5%;
+}
+
+
+nav ul{
+	list-style: none;
+	float: right;
+	margin: 0; padding: 0;
+	display: flex;
+}
+nav ul li
+{
+	list-style: none;
+}
+
+nav ul li a{
+	line-height: 80px;
+	padding: 12px 20px;
+	text-decoration: none;
+	text-transform: uppercase;
 	transition: .3s;
+	font-size: 14px;
+	color: black;
+}
+
+nav.small ul li a{
+	line-height: 60px;
+}
+
+nav ul li.active,
+nav.small ul li.active > a
+{
+    color: #5995DA;
+}
+
+nav ul li a:hover,
+nav.small ul li a:hover
+{
+	background: #ea3b50;
+	color: white;
+}
+
+div.hamburguer-btn,
+div.wrapper>div#mob-menu
+{
+	display: none;
+}
+div.wrapper nav
+{
+	display: block;
+	padding:  10px 20px;
 }
 
 @media (min-width: 768px){
@@ -312,41 +383,55 @@ nav .logo{
 	    width: 240px;
 	}
 }
-.navbar-brand {
-    float: left;
-    font-size: 18px;
-    line-height: 20px;
-    height: 54px;
-}
 
-nav.small .logo{
-	padding: 0px 12px;
-	height: 46px;
-}
+@media (max-width: 730px) {
+	div.wrapper>nav#desk-menu
+	{
+		display: none;
+	}
+	div.wrapper>div#mob-menu
+	{
+		display: block;
+		width: 80%;
+		background: #444759;
+		height: 100vh;
+		position: fixed;
+		z-index: 12;
+		top: 0px;
+		left: -90%;
+		transition: all .5s;
+	}
+	div.hamburguer-btn{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		font-size: 28px;
+		padding-right: 5%;
+		padding-left: 5%;
+		cursor: pointer;
+	}
 
-nav ul{
-	list-style: none;
-	float: right;
-	margin: 0; padding: 0;
-	display: flex;
-}
-nav ul li
-{
-	list-style: none;
-}
+	div.wrapper>div#mob-menu ul{
+		list-style: none;
+		margin-top: 60px;
+	}
+	div.wrapper>div#mob-menu ul li{
+		padding: 12px 5%;
+		cursor: pointer;
+		text-transform: uppercase;
+	}
+	div.wrapper>div#mob-menu ul li:hover
+	{
+		background: #ea3b50;
+	}
 
-nav ul li a{
-	line-height: 80px;
-	padding: 12px 30px;
-	text-decoration: none;
-	text-transform: uppercase;
-	transition: .3s;
-}
+	div.wrapper>div#mob-menu ul li a{
+		text-decoration: none;
+		color: white;
+	}
 
-nav.small ul li a{
-	line-height: 60px;
-}
 
+}
 /*=====  End of Section Menu nav  ======*/
 
 
@@ -355,26 +440,16 @@ nav.small ul li a{
 =            Section Slider            =
 ======================================*/
 
-/*
-div.slider
-{
-	width: 100%;
-	height: 100vh;
-	/*background: url('https://img00.deviantart.net/f7db/i/2017/036/a/4/landscape__1____forest_mountain_by_ncoll36-daxsdd5.jpg');*/
-	/*background: url('https://img00.deviantart.net/715f/i/2017/034/a/8/landscape__2____mountain_river_by_ncoll36-daxsrrg.jpg');
-	background-size: cover;
-	background-position: center;
-}
-*/
 .caption {
-  position: absolute;
-  top: 40%;
-  left: 6rem;
-  z-index: 9;
-  /*transform: translateY(-50%);*/
-  opacity: 0;
-  transition: 500ms ease opacity, 500ms ease transform;
-  transform: translateY(60px);
+	width: 60%;
+	position: absolute;
+	top: 40%;
+	left: 6rem;
+	z-index: 9;
+	/*transform: translateY(-50%);*/
+	opacity: 0;
+	transition: 500ms ease opacity, 500ms ease transform;
+	transform: translateY(60px);
 }
 .caption.current-caption {
   transition-delay: 1000ms;
@@ -405,6 +480,23 @@ div.slider
   margin-bottom: 2.5rem;
   display: block;
 }
+@media (max-width: 650px) {
+	.caption{
+		left: 4rem;
+	}
+	.caption .caption-heading h1 {
+	  font-size: 2rem;
+	  margin-bottom: 1rem;
+	}
+.caption .caption-subhead {
+  font-size: .7rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 2px;
+  word-spacing: .1rem;
+}
+}
 .caption a.btn {
   color: #333;
   font-size: 0.8rem;
@@ -425,10 +517,13 @@ div.slider
 .container {
   width: 100%;
   height: 100vh;
-  background-color: #2C302E;
   display: flex;
   position: relative;
 }
+
+@media (max-width: 730px) {.container {height: 430px;}}
+@media (max-width: 600px) {.container {height: 360px;}}
+@media (max-width: 500px) {.container {height: 200px;}}
 
 .left-col, .right-col {
   width: 100%;
@@ -455,7 +550,7 @@ div.slider
   opacity: 0;
   transition: 1000ms cubic-bezier(1, 0.04, 0.355, 1) transform, 1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55) clip-path;
   transform: translateY(-100%);
-  scale: 1;
+  transform: scale(1);
   z-index: -1;
 }
 .left-col .slide.previous {

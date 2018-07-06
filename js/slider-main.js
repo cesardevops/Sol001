@@ -126,8 +126,8 @@ function whichTransitionEvent(){
   }
 }
 
-var transitionEvent = whichTransitionEvent()
-caption.addEventListener(transitionEvent, customFunction);
+var transitionEvent = whichTransitionEvent();
+//caption.addEventListener(transitionEvent, customFunction);
 
 function customFunction(event) {
   caption.removeEventListener(transitionEvent, customFunction);

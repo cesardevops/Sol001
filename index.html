@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Título de la página Web</title>
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 	<script type="text/javascript">
@@ -16,21 +17,47 @@
 				$('nav').removeClass('small');
 			}
 		});
+
+		$(function(){
+			$(".fa-times").hide();
+			$(".fa-bars").click(function(){
+				$(this).hide();
+				$(".fa-times").show();
+				$("#mob-menu").css("left","0px");
+			});
+
+			$(".fa-times").click(function(){
+				$(this).hide();
+				$(".fa-bars").show();
+				$("#mob-menu").css("left","-90%");
+
+			});
+
+		});
 	</script>
 
 </head>
 <body>
 	<div class="wrapper">
-		<nav class="wrapper">
-			<div class="logo">
-				<h3>Logo</h3>
-			</div>
-			
-			<!--
-			<div class="navbar-header">
-              <a class="navbar-brand" href="/"><img src="https://mojang.com/assets/mojang-logo-b5980396e697fa0256589e67b6f8dbcb7caabc6dc8ef439ddff8c89667fd3c37.svg" width="372=&quot;true&quot;" height="58=&quot;true&quot;" alt="Mojang=&quot;true&quot;"></a>
-            </div>
-			-->
+
+		<nav id="desk-menu">
+			<div class="logo-business">LOGO</div>
+			<ul>
+				<li class="active"><a href="#">Inicio</a></li>
+				<li><a href="#">Servicios</a></li>
+				<li><a href="#">Proyectos</a></li>
+				<li><a href="#">Nosotros</a></li>
+				<li><a href="#">Contacto</a></li>
+			</ul>
+		</nav>
+
+		<div class="hamburguer-btn">
+			<div class="logo-business">LOGO</div>
+			<i class="fas fa-bars"></i>
+			<i class="fas fa-times"></i>
+		</div>
+
+		<div id="mob-menu">
 			<ul>
 				<li><a href="#">Inicio</a></li>
 				<li><a href="#">Servicios</a></li>
@@ -38,7 +65,7 @@
 				<li><a href="#">Nosotros</a></li>
 				<li><a href="#">Contacto</a></li>
 			</ul>
-		</nav>
+		</div>
 		
 		<div class="container" id="container">
 			
