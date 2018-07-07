@@ -2,40 +2,14 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8">
-	<meta name="theme-color" content="#db5945">
+	<meta name="theme-color" content="#DB5945">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Título de la página Web</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
-	<script type="text/javascript">
-		$(window).on('scroll' , function(){
-			if($(window).scrollTop()){
-				$('nav').addClass('small');
-			}else {
-				$('nav').removeClass('small');
-			}
-		});
-
-		$(function(){
-			$(".fa-times").hide();
-			$(".fa-bars").click(function(){
-				$(this).hide();
-				$(".fa-times").show();
-				$("#mob-menu").css("left","0px");
-			});
-
-			$(".fa-times").click(function(){
-				$(this).hide();
-				$(".fa-bars").show();
-				$("#mob-menu").css("left","-90%");
-
-			});
-
-		});
-	</script>
+	<script src="js/menu-main.js" type="text/javascript"></script>
 
 </head>
 <body>
@@ -57,7 +31,7 @@
 			<i class="fas fa-bars"></i>
 			<i class="fas fa-times"></i>
 		</div>
-
+		<div class="back-menu-shadow"></div>
 		<div id="mob-menu">
 			<ul>
 				<li><a href="#">Inicio</a></li>
@@ -70,9 +44,6 @@
 		
 		<div class="container" id="container">
 			
-			<!--<p class="line anim-typeWriter">Soluciones EcoAmbientales</p>-->
-
-			<!--<div class="container" id="container">-->
 			  <div class="caption" id="slider-caption">
 			    <div class="caption-heading">
 			      <h1>Lorem Ipsum</h1>
@@ -86,7 +57,7 @@
 			    <li class="slide-up"> <a href="#"><</a></li>
 			    <li class="slide-down"> <a id="down_button" href="#">></a></li>
 			  </ul>
-			<!--</div>-->
+
 		</div>
 
 		<script src="js/slider-main.js" type="text/javascript"></script>
@@ -260,5 +231,6 @@
 			
 	</footer>
 </body>
+
 
 </html>
