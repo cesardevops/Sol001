@@ -289,9 +289,7 @@ div.hamburguer-btn
 
 div.logo-business
 {
-	background: #ea3b50;
-	opacity: .6;
-	width: 150px;
+	width: 330px;
 	height: 100%;
 	padding: 0px 20px;
 	float: left;
@@ -300,6 +298,9 @@ div.logo-business
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	background-image: url("../img/LogoSSmLv001.png");
+	background-size: cover;
+	background-position: center;
 }
 
 nav.small
@@ -308,6 +309,10 @@ nav.small
 	padding: 5px 100px;
 	background: white;
 	box-shadow: 0 0px 0 1px rgba(64,71,75,0.1);
+}
+
+nav.small .logo-business{
+	width: 213px;
 }
 div.hamburguer-btn
 {
@@ -385,6 +390,9 @@ div.wrapper nav
 }
 
 @media (max-width: 740px) {
+	div.logo-business{
+		width: 130px;
+	}
 	div.wrapper>nav#desk-menu
 	{
 		display: none;
@@ -670,8 +678,8 @@ section.content
 section.content p,
 section.content h2
 {
-	width: 900px; margin: 30px auto; text-align: justify;
-	font-size: 20px;
+	margin: 30px auto; 
+	text-align: justify;
 	line-height: 30px;
 }
 
