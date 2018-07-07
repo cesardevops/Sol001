@@ -550,7 +550,6 @@ div.wrapper nav
   opacity: 0;
   transition: 1000ms cubic-bezier(1, 0.04, 0.355, 1) transform, 1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55) clip-path;
   transform: translateY(-100%);
-  transform: scale(1);
   z-index: -1;
 }
 .left-col .slide.previous {
