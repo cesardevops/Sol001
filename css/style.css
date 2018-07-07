@@ -310,7 +310,7 @@ a.boton-subir {
 	position: fixed;
 	right: 10px;
 	bottom: 50px;
-	z-index: 999999999;
+	z-index: 11;
 	text-decoration: none;
 }
   a.boton-subir.open {
