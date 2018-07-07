@@ -7,6 +7,10 @@
 
 /*=====  End of Imports  ======*/
 
+::selection {
+ 	background: #e74c3c;
+	color: white;
+}
 
 html, body{
 	margin: 0;
@@ -17,7 +21,11 @@ html, body{
 	flex-wrap: wrap;
 	font-family: 'Poppins', sans-serif;
 }
-
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 div.wrapper
 {
 	width: 100%;
@@ -28,10 +36,12 @@ footer
 	align-self: flex-end;
 	background: white;
 	border-top: 1px solid rgba(64,71,75,0.1);
+	background: #0099cc;
 }
 footer h5 {
     font-size: 20px;
     text-transform: uppercase;
+    color: white;
 }
 footer h4, footer h5, footer h6 {
     padding-bottom: 30px;
@@ -45,11 +55,12 @@ footer ul {
 footer ul li {
     margin-bottom: 10px;
 }
-footer a {
+footer a , footer p, footer center{
     text-decoration: none;
     -webkit-transition: color 0.6s;
     -o-transition: color 0.6s;
     transition: color 0.6s;
+    color: #ffe4c7;
 }
 /*========================================
 =            Nuestro Grid css            =
@@ -262,14 +273,33 @@ footer a {
 =            Section Menu nav            =
 ========================================*/
 
-nav{
+
+nav,
+div.hamburguer-btn
+{
 	position: fixed;
 	top: 0; left: 0;
 	width: 100%;
+	z-index: 93;
 	height: 100px;
 	padding: 10px 100px;
 	box-sizing: border-box;
 	transition: .3s;
+}
+
+div.logo-business
+{
+	background: #ea3b50;
+	opacity: .6;
+	width: 150px;
+	height: 100%;
+	padding: 0px 20px;
+	float: left;
+	font-size: 24px;
+	transition: .3s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 nav.small
@@ -278,21 +308,15 @@ nav.small
 	padding: 5px 100px;
 	background: white;
 	box-shadow: 0 0px 0 1px rgba(64,71,75,0.1);
-    
+}
+div.hamburguer-btn
+{
+	height: 50px;
+	box-shadow: 0 0px 0 1px rgba(64,71,75,0.1);
+	background: white;
+	right: 5%;
 }
 
-nav .logo{
-	padding: 0px 20px;
-	height: 80px;
-	float: left;
-	font-size: 24px;
-	transition: .3s;
-}
-
-nav.small .logo{
-	padding: 0px 12px;
-	height: 46px;
-}
 
 nav ul{
 	list-style: none;
@@ -307,83 +331,333 @@ nav ul li
 
 nav ul li a{
 	line-height: 80px;
-	padding: 12px 30px;
+	padding: 10px 20px;
 	text-decoration: none;
 	text-transform: uppercase;
 	transition: .3s;
+	font-size: 14px;
+	color: black;
 }
 
 nav.small ul li a{
-	line-height: 60px;
+	line-height: 50px;
 }
 
+nav ul li.active,
+nav.small ul li.active > a
+{
+    color: #5995DA;
+}
+
+nav ul li a:hover,
+nav.small ul li a:hover
+{
+	background: #ea3b50;
+	color: white;
+}
+
+div.hamburguer-btn,
+div.wrapper>div#mob-menu
+{
+	display: none;
+}
+div.wrapper nav
+{
+	display: block;
+	padding:  10px 20px;
+}
+
+@media (min-width: 768px){
+	div.navbar-header {
+	    float: left;
+	}
+}
+@media (max-width: 767px){
+	.navbar-brand {
+	    height: auto;
+	}
+}
+@media (max-width: 992px)
+{
+	.navbar-brand img {
+	    width: 240px;
+	}
+}
+
+@media (max-width: 740px) {
+	div.wrapper>nav#desk-menu
+	{
+		display: none;
+	}
+	div.wrapper>div#mob-menu
+	{
+		display: block;
+		width: 280px;
+		background: #444759;
+		height: 100vh;
+		position: fixed;
+		z-index: 12;
+		top: 0px;
+		left: -90%;
+		transition: all .5s;
+	}
+	div.hamburguer-btn{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		font-size: 28px;
+		padding-right: 5%;
+		padding-left: 5%;
+		cursor: pointer;
+	}
+
+	div.wrapper>div#mob-menu ul{
+		list-style: none;
+		margin-top: 60px;
+	}
+	div.wrapper>div#mob-menu ul li{
+		padding: 12px 5%;
+		cursor: pointer;
+		text-transform: uppercase;
+	}
+	div.wrapper>div#mob-menu ul li:hover
+	{
+		background: #ea3b50;
+	}
+
+	div.wrapper>div#mob-menu ul li a{
+		text-decoration: none;
+		color: white;
+	}
+
+
+}
 /*=====  End of Section Menu nav  ======*/
 
 
 
 /*======================================
-=            Section slider            =
+=            Section Slider            =
 ======================================*/
 
-section.slider
-{
-	width: 100%;
-	height: 100vh;
-	/*background: url('https://img00.deviantart.net/f7db/i/2017/036/a/4/landscape__1____forest_mountain_by_ncoll36-daxsdd5.jpg');*/
-	background: url('https://img00.deviantart.net/715f/i/2017/034/a/8/landscape__2____mountain_river_by_ncoll36-daxsrrg.jpg');
-	background-size: cover;
-	background-position: center;
+.caption {
+	width: 60%;
+	position: absolute;
+	top: 40%;
+	left: 6rem;
+	z-index: 9;
+	/*transform: translateY(-50%);*/
+	opacity: 0;
+	transition: 500ms ease opacity, 500ms ease transform;
+	transform: translateY(60px);
 }
-
-
-/*=====  End of Section slider  ======*/
-
-
-section.slider p.line
-{
-	display: block;
-	height: auto;
-	width: auto;
-	color: white;
-	font-family: 'Anonymous Pro', monospace;
-	position: relative;
-	top: 70%;
-	margin:  0 auto;
-	/*border-right: 2px solid white;*/
-	font-size: 1.94em;
-	text-align: center;
-	white-space: nowrap;
-	overflow: hidden;
-	transform: translateY(-50%);
+.caption.current-caption {
+  transition-delay: 1000ms;
+  opacity: 1;
+  transform: translateY(0);
 }
-
-
-/* Animation */
-/*
-p.anim-typeWriter
-{
-	animation: TypeWriter 4s steps(25) 1s normal both,
-	blinkTextCursor 500ms steps(25) infinite normal;
+.caption.previous-caption {
+  transform: translateY(-60px);
 }
-
-@keyframes TypeWriter {
-	from {
-		width: 0;
+.caption .caption-heading {
+  transition: 500ms ease-in all;
+}
+.caption .caption-heading h1 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  text-indent: -0.2rem;
+  letter-spacing: .2rem;
+  font-weight: 300;
+}
+.caption .caption-subhead {
+  font-size: 1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 4px;
+  word-spacing: .1rem;
+  margin-bottom: 2.5rem;
+  display: block;
+}
+@media (max-width: 650px) {
+	.caption{
+		left: 4rem;
 	}
-	to {
-		width: 400px;
+	.caption .caption-heading h1 {
+	  font-size: 2rem;
+	  margin-bottom: 1rem;
 	}
-	
+	.caption .caption-subhead {
+	  font-size: .7rem;
+	  font-weight: 300;
+	  text-transform: uppercase;
+	  color: white;
+	  letter-spacing: 2px;
+	  word-spacing: .1rem;
+	}
 }
-@keyframes blinkTextCursor {
-	from {
-		border-right-color: : white;
-	}	
-	to {
-		border-right-color: transparent;
-	}
+.caption a.btn {
+  color: #333;
+  font-size: 0.8rem;
+  text-decoration: none;
+  background-color: white;
+  padding: .5rem 1rem;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+  position: relative;
+  z-index: 9;
+  transition: 250ms ease-in background-color, 500ms ease-in color;
+}
+.caption a.btn:hover {
+  background-color: black;
+  color: white;
+}
 
-}*/
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+}
+
+@media (max-width: 740px) { .container{margin-top: 50px;}}
+@media (max-width: 740px) {.container {height: 430px;}}
+@media (max-width: 600px) {.container {height: 360px;}}
+@media (max-width: 500px) {.container {height: 200px;}}
+
+.left-col, .right-col {
+  width: 100%;
+  box-sizing: border-box;
+  height: 100%;
+  overflow: hidden;
+}
+
+.left-col {
+  background-size: cover;
+  background-position: center top;
+  overflow: hidden;
+  /*margin: 2rem;*/
+  position: relative;
+}
+.left-col .slide {
+  /*filter: grayscale(100%);*/
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: left top !important;
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: 1000ms cubic-bezier(1, 0.04, 0.355, 1) transform, 1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55) clip-path;
+  transform: translateY(-100%);
+  z-index: -1;
+}
+.left-col .slide.previous {
+  z-index: 1;
+  opacity: 1;
+  transform: translateY(0);
+  animation-delay: 1s;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  transition: 3s ease transform;
+  will-change: transform;
+}
+.left-col .slide.previous.change {
+  transform: translateY(50%);
+}
+.left-col .slide.next {
+  transform: translateY(-100%);
+  z-index: 3;
+  opacity: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+}
+.left-col .slide.current {
+  opacity: 1;
+  transform: translateY(0) scale(1.25);
+  z-index: 2;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.right-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right-col .preview {
+  max-width: 400px;
+}
+
+.nav {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 6;
+  overflow: hidden;
+}
+.nav a {
+  color: #fafafa;
+  font-size: 3rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+.nav:hover .slide-up, .nav:hover .slide-down {
+  /*opacity: .5;*()
+  /*transform: translateX(0);*/
+}
+.nav .slide-up, .nav .slide-down {
+  display: block;
+  position: absolute;
+  text-align: center;
+  padding: 1rem;
+  opacity: .5;
+  transition: .25s ease opacity,.25s ease transform;
+  z-index: 99;
+}
+.nav .slide-up:hover, .nav .slide-down:hover {
+  opacity: 1;
+}
+.nav .slide-up a, .nav .slide-down a {
+  text-decoration: none;
+  font-weight: 300 !important;
+}
+.nav .slide-up {
+  top: 50%;
+  left: 0;
+  /*transform: translateX(-100%);*/
+}
+.nav .slide-down {
+  top: 50%;
+  right: 0;
+  /*transform: translateX(100%);*/
+}
+
+.back-menu-shadow
+{
+    background-color: rgba(0,0,0,.5);
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translateZ(0);
+    transition: opacity .2s linear;
+    visibility: hidden;
+    z-index: 0;
+}
+.open-back-menu-shadow
+{
+	opacity: 1;
+    visibility: visible;
+    z-index: 12;
+}
+/*=====  End of Section Slider  ======*/
+
+
+
 /*=======================================
 =            Seciont content            =
 =======================================*/

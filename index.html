@@ -1,32 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<meta charset="utf-8">
-	<meta name="theme-color" content="#db5945">
+	<meta name="theme-color" content="#DB5945">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Título de la página Web</title>
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="js/menu-main.js" type="text/javascript"></script>
 
-	<script type="text/javascript">
-		$(window).on('scroll' , function(){
-			if($(window).scrollTop()){
-				$('nav').addClass('small');
-			}else {
-				$('nav').removeClass('small');
-			}
-		});
-	</script>
 </head>
 <body>
-	
-
 	<div class="wrapper">
-		<nav class="wrapper">
-			<div class="logo">
-				<img src="img/Logo4.png" height="60" alt="Logo">
-			</div>
+
+		<nav id="desk-menu">
+			<div class="logo-business">LOGO</div>
+			<ul>
+				<li class="active"><a href="#">Inicio</a></li>
+				<li><a href="#">Servicios</a></li>
+				<li><a href="#">Proyectos</a></li>
+				<li><a href="#">Nosotros</a></li>
+				<li><a href="#">Contacto</a></li>
+			</ul>
+		</nav>
+
+		<div class="hamburguer-btn">
+			<div class="logo-business">LOGO</div>
+			<i class="fas fa-bars"></i>
+			<i class="fas fa-times"></i>
+		</div>
+		<div class="back-menu-shadow"></div>
+		<div id="mob-menu">
 			<ul>
 				<li><a href="#">Inicio</a></li>
 				<li><a href="#">Servicios</a></li>
@@ -34,25 +40,46 @@
 				<li><a href="#">Nosotros</a></li>
 				<li><a href="#">Contacto</a></li>
 			</ul>
-		</nav>
+		</div>
 		
-		<section class="slider">
+		<div class="container" id="container">
 			
-			<p class="line anim-typeWriter">Soluciones EcoAmbientales</p>
+			  <div class="caption" id="slider-caption">
+			    <div class="caption-heading">
+			      <h1>Lorem Ipsum</h1>
+			    </div>
+			    <div class="caption-subhead"><span>dolor sit amet, consectetur adipiscing elit. </span></div><a class="btn" href="#">Sit Amet</a>
+			  </div>
+			  <div class="left-col" id="left-col">
+			    <div id="left-slider"></div>
+			  </div>
+			  <ul class="nav">
+			    <li class="slide-up"> <a href="#"><</a></li>
+			    <li class="slide-down"> <a id="down_button" href="#">></a></li>
+			  </ul>
 
-		</section>
+		</div>
+
+		<script src="js/slider-main.js" type="text/javascript"></script>
+
+
 		<section class="content">
-			<h2>Titulo</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id aliquid ipsum ut, hic voluptatum ipsa temporibus in officiis beatae consequuntur enim veritatis nemo necessitatibus, et rerum maiores. Ab, dolor animi.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem omnis modi mollitia ipsam error culpa doloremque cumque quis rem, ea, est, recusandae veniam. Tenetur voluptas, quisquam nulla voluptate, ducimus omnis.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta cum velit illum non eveniet nobis maxime, voluptatibus, illo eligendi autem, culpa ea, libero quae harum! Maiores at fugit dicta quos? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio officia quis cum labore sequi voluptatibus architecto amet, minima repellat recusandae ad ipsam quas! Reprehenderit placeat nisi, eos consequatur ut harum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, vero esse eum voluptatem cupiditate exercitationem ab minus accusantium deserunt quo quasi perspiciatis possimus porro dignissimos inventore, modi consequatur laboriosam eaque.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus in facilis distinctio, eos atque. Beatae aspernatur repellendus, accusantium error vero hic, incidunt fugit, a provident quod aliquam saepe earum eos.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit unde quam quisquam sit voluptate facere aliquam ab, rem ducimus atque inventore iure iusto similique. Ratione incidunt quaerat, officiis autem suscipit.</p>
-			<h2>Titulo</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam qui esse, ducimus, earum quibusdam repellendus illum sed culpa tempore nihil a? Iure laboriosam tempora numquam quasi explicabo corporis possimus, natus.</p>
-<!--
-	<div class="fila total">
+
+		<div class="fila total">
+			<div class="columna">
+				<h2>Titulo</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id aliquid ipsum ut, hic voluptatum ipsa temporibus in officiis beatae consequuntur enim veritatis nemo necessitatibus, et rerum maiores. Ab, dolor animi.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem omnis modi mollitia ipsam error culpa doloremque cumque quis rem, ea, est, recusandae veniam. Tenetur voluptas, quisquam nulla voluptate, ducimus omnis.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta cum velit illum non eveniet nobis maxime, voluptatibus, illo eligendi autem, culpa ea, libero quae harum! Maiores at fugit dicta quos? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio officia quis cum labore sequi voluptatibus architecto amet, minima repellat recusandae ad ipsam quas! Reprehenderit placeat nisi, eos consequatur ut harum.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, vero esse eum voluptatem cupiditate exercitationem ab minus accusantium deserunt quo quasi perspiciatis possimus porro dignissimos inventore, modi consequatur laboriosam eaque.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus in facilis distinctio, eos atque. Beatae aspernatur repellendus, accusantium error vero hic, incidunt fugit, a provident quod aliquam saepe earum eos.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit unde quam quisquam sit voluptate facere aliquam ab, rem ducimus atque inventore iure iusto similique. Ratione incidunt quaerat, officiis autem suscipit.</p>
+				<h2>Titulo</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam qui esse, ducimus, earum quibusdam repellendus illum sed culpa tempore nihil a? Iure laboriosam tempora numquam quasi explicabo corporis possimus, natus.</p>
+			</div>
+		</div>
+
+<!--	<div class="fila total">
 		<div class="columna">a</div>
 
 	</div>
@@ -124,80 +151,76 @@
 	<footer>
 		<!-- Información de las soluciones -->
 		
-		<div class="fila total">
-			<div class="columna" style="padding: 2em;">
+		<div class="fila dos-columnas">
+			<div class="columna">
 				<h5>Nuestras Soluciones</h5>
 				<p>Ofrecemosuna gran variedad de servicios, para generar soluciones integrales dedicadas a proyectos de desarrollo sostenible.</p>	
+			</div>
+
+			<!-- Enlaces de interés -->
+
+			<div class="columna fila dos-columnas" style="margin-top:0px;">
+				<div class="columna" style="padding-left: 0px;">
+					<h5>Compañia</h5>
+					<ul>
+						<li><a href="#">Inicio</a></li>
+						<li><a href="#">Nosotros</a></li>
+						<li><a href="#">Contáctenos</a></li>
+					</ul>
+				</div>
+				<div class="columna" style="padding-left: 0px;">
+					<h5>Enlaces de Interés</h5>
+					<ul>
+						<li><a href="#">Área de Clientes</a></li>
+						<li><a href="#">Comunidad</a></li>
+
+					</ul>
+				</div>
 			</div>
 		</div>
 
 
-		<div class="fila dos-columnas">
-			<div class="columna" style="padding: 0;">
-				<div class="fila dos-columnas">
-					<div class="columna" style="padding: 0;">
-						<h5>Desarrollo</h5>
-						<ul>
-							<li><a href="#">Desarrollo uno</a></li>
-							<li><a href="#">Desarrollo dos</a></li>
-							<li><a href="#">Desarrollo tres</a></li>
-						</ul>
-					</div>
-					<div class="columna" style="padding: 0;">
-						<h5>Estudios</h5>
-						<ul>
-							<li><a href="#">Estudio uno</a></li>
-							<li><a href="#">Estudio dos</a></li>
-							<li><a href="#">Estudio tres</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="fila dos-columnas">
+		<div class="fila cuatro-columnas">
 
-					<div class="columna" style="padding: 0;">
-						<h5>Asesoría</h5>
-						<ul>
-							<li><a href="#">Asesoría uno</a></li>
-							<li><a href="#">Asesoría dos</a></li>
-							<li><a href="#">Asesoría tres</a></li>
-							<li><a href="#">Asesoría cuatro</a></li>
-						</ul>
-					</div>
-					<div class="columna" style="padding: 0;">
-						<h5>Servicios Adicionales</h5>
-						<ul>
-							<li><a href="#">Servicio uno</a></li>
-							<li><a href="#">Servicio dos</a></li>
-							<li><a href="#">Servicio tres</a></li>
-							<li><a href="#">Servicio cuatro</a></li>
-							<li><a href="#">Servicio cinco</a></li>
-						</ul>
-					</div>
-				</div>
+			<div class="columna">
+				<h5>Desarrollo</h5>
+				<ul>
+					<li><a href="#">Desarrollo uno</a></li>
+					<li><a href="#">Desarrollo dos</a></li>
+					<li><a href="#">Desarrollo tres</a></li>
+				</ul>
 			</div>
-			<div class="columna" style="padding: 0;">
-				
-				<!-- Enlaces de interés -->
-
-				<div class="fila dos-columnas">
-					<div class="columna" style="padding: 0;">
-						<h5>Compañia</h5>
-						<ul>
-							<li><a href="#">Inicio</a></li>
-							<li><a href="#">Nosotros</a></li>
-							<li><a href="#">Contáctenos</a></li>
-						</ul>
-					</div>
-					<div class="columna" style="padding: 0;">
-						<h5>Enlaces de Interés</h5>
-						<ul>
-							<li><a href="#">Área de Clientes</a></li>
-							<li><a href="#">Comunidad</a></li>
-
-						</ul>
-					</div>
-				</div>
+			<div class="columna">
+				<h5>Estudios</h5>
+				<ul>
+					<li><a href="#">Estudio uno</a></li>
+					<li><a href="#">Estudio dos</a></li>
+					<li><a href="#">Estudio tres</a></li>
+				</ul>
 			</div>
+
+
+			<div class="columna">
+				<h5>Asesoría</h5>
+				<ul>
+					<li><a href="#">Asesoría uno</a></li>
+					<li><a href="#">Asesoría dos</a></li>
+					<li><a href="#">Asesoría tres</a></li>
+					<li><a href="#">Asesoría cuatro</a></li>
+				</ul>
+			</div>
+			<div class="columna">
+				<h5>Servicios Adicionales</h5>
+				<ul>
+					<li><a href="#">Servicio uno</a></li>
+					<li><a href="#">Servicio dos</a></li>
+					<li><a href="#">Servicio tres</a></li>
+					<li><a href="#">Servicio cuatro</a></li>
+					<li><a href="#">Servicio cinco</a></li>
+				</ul>
+			</div>
+
+
 		</div>
 
 		<!-- Información final del documento -->
@@ -208,5 +231,6 @@
 			
 	</footer>
 </body>
+
 
 </html>
