@@ -13,34 +13,79 @@
 
 </head>
 <body>
+<header class="main-header">
+	<nav id="desk-menu">
+		<div class="logo-business"></div>
+		<ul class="menu">
+			<li class="active menu__item"><a href="#">Inicio</a></li>
+			<li class="menu__item" data-sub="product"><a href="#">Servicios</a></li>
+			<li class="menu__item"><a href="#">Proyectos</a></li>
+			<li class="menu__item"><a href="#">Nosotros</a></li>
+			<li class="menu__item"><a href="#">Contacto</a></li>
+		</ul>
+	</nav>
+
+	<div class="hamburguer-btn">
+		<div class="logo-business"></div>
+		<i class="fas fa-bars"></i>
+		<i class="fas fa-times"></i>
+	</div>
+
+	<div class="back-menu-shadow"></div>
+	<div id="mob-menu">
+		<ul class="menu">
+			<li class="menu__item" data-sub="inicio"><a href="#">Inicio</a></li>
+			<li class="menu__item" data-sub="product"><a href="#">Servicios</a></li>
+			<li class="menu__item" data-sub="proyectos"><a href="#">Proyectos</a></li>
+			<li class="menu__item" data-sub="nosotros"><a href="#">Nosotros</a></li>
+			<li class="menu__item" data-sub="contacto"><a href="#">Contacto</a></li>
+		</ul>
+	</div>
+
+
+  <div class="dropdown-holder">
+    <div class="dropdown__arrow"></div>
+    <div class="dropdown__bg">
+      <div class="dropdown__bg-bottom"></div>
+    </div>
+    <div class="dropdown__wrap">
+      <div class="dropdown-menu" id="product" data-sub="product">
+        <div class="dropdown-menu__content">
+          <div class="top-section">
+            <div class="col-2">
+              <ul>
+                <li><a href="">
+                    <h3>Cartografia</h3>
+                    <p> Cartografia temática y ambiental satelital.</p></a></li>
+                <li><a href="">
+                    <h3>Aplicaciones</h3>
+                    <p> Aplicaciones de modelos numéricos en estudios del terreno, vegetación y cuencas</p></a></li>
+                <li><a href="">
+                    <h3>Estudios de impactos</h3>
+                    <p> Estudios de impactos de.cambio clim acuerdo climático.</p></a></li>
+              </ul>
+              <ul>
+                <li><a href="">
+                    <h3>Análisis</h3>
+                    <p>Análisis ambiental territorial  y estudios socioeconomicos ZEE.</p></a></li>
+                <li><a href="">
+                    <h3>Estudios de riesgo</h3>
+                    <p>Estudios de riesgo y vulnerabilidad en ambientes costeros, cuencas andinas y amazónicas.</p></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="bottom-section">
+            <ul>
+              <li><a href="">Ver todos los servicios</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
 	<div class="wrapper">
-
-		<nav id="desk-menu">
-			<div class="logo-business"></div>
-			<ul>
-				<li class="active"><a href="#">Inicio</a></li>
-				<li><a href="#">Servicios</a></li>
-				<li><a href="#">Proyectos</a></li>
-				<li><a href="#">Nosotros</a></li>
-				<li><a href="#">Contacto</a></li>
-			</ul>
-		</nav>
-
-		<div class="hamburguer-btn">
-			<div class="logo-business"></div>
-			<i class="fas fa-bars"></i>
-			<i class="fas fa-times"></i>
-		</div>
-		<div class="back-menu-shadow"></div>
-		<div id="mob-menu">
-			<ul>
-				<li><a href="#">Inicio</a></li>
-				<li><a href="#">Servicios</a></li>
-				<li><a href="#">Proyectos</a></li>
-				<li><a href="#">Nosotros</a></li>
-				<li><a href="#">Contacto</a></li>
-			</ul>
-		</div>
 		
 		<div class="container" id="container">
 			
@@ -245,28 +290,6 @@
 	     <i class="fa fa-rocket" aria-hidden="true"></i>
     </a>
 </body>
-<script>
-
-      $(window).scroll(function(){
-        if($(this).scrollTop() > 300){
-          $('#js_up').addClass('open');
-          $('#js_up').removeClass('close');
-          $('#js_up').removeAttr('style');
-        }else{
-          $('#js_up').addClass('close');
-          $('#js_up').removeClass('open');
-          setTimeout(function(){
-            $('#js_up').css('display', 'none');
-          }, 500);
-        }
-      });
-      $("#js_up").on('click', function (e) {
-        e.preventDefault();
-          $("body,html").animate({
-          scrollTop: 0
-        },1000);
-        return false;
-      });
-    
-</script>
+<script src="js/dropdown-menu-des.js" type="text/javascript"></script>
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </html>

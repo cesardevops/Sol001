@@ -44,3 +44,4 @@ $(function(){
 	window.addEventListener('resize',getWidth);
 
 });
+
