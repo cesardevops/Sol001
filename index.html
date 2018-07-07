@@ -240,6 +240,33 @@
 		</div>
 			
 	</footer>
-</body>
 
+	<a href="javascript:void(0)" id="js_up" class="boton-subir close" title="Subir" style="display: none;">
+	     <i class="fa fa-rocket" aria-hidden="true"></i>
+    </a>
+</body>
+<script>
+
+      $(window).scroll(function(){
+        if($(this).scrollTop() > 300){
+          $('#js_up').addClass('open');
+          $('#js_up').removeClass('close');
+          $('#js_up').removeAttr('style');
+        }else{
+          $('#js_up').addClass('close');
+          $('#js_up').removeClass('open');
+          setTimeout(function(){
+            $('#js_up').css('display', 'none');
+          }, 500);
+        }
+      });
+      $("#js_up").on('click', function (e) {
+        e.preventDefault();
+          $("body,html").animate({
+          scrollTop: 0
+        },1000);
+        return false;
+      });
+    
+</script>
 </html>

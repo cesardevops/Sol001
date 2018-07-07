@@ -267,6 +267,72 @@ footer a , footer p, footer center{
 
 /*=====  End of Nuestro Grid css  ======*/
 
+/*============================================================
+=            Boton para mover a la parte superior            =
+============================================================*/
+
+@keyframes bounceInUp {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  from {
+    opacity: 0;
+    transform: translate3d(0, 3000px, 0); }
+  60% {
+    opacity: 1;
+    transform: translate3d(0, -20px, 0); }
+  75% {
+    transform: translate3d(0, 10px, 0); }
+  90% {
+    transform: translate3d(0, -5px, 0); }
+  to {
+    transform: translate3d(0, 0, 0); } }
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0); } }
+
+a.boton-subir {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	animation-name: fadeOutDown;
+	background: rgba(0, 151, 75, 0.6);
+	border: 3px solid #009549;
+	border-radius: 50%;
+	transition: all 0.5s linear;
+	height: 50px;
+	width: 50px;
+	position: fixed;
+	right: 10px;
+	bottom: 50px;
+	z-index: 999999999;
+	text-decoration: none;
+}
+  a.boton-subir.open {
+    animation-name: bounceInUp; }
+  a.boton-subir.close {
+    animation-name: fadeOutDown; }
+  a.boton-subir:focus {
+    outline: none; }
+  a.boton-subir:hover {
+    background: #00ae56;
+    text-decoration: none; }
+    @media screen and (max-width: 600px) {
+      a.boton-subir:hover {
+        background: rgba(0, 151, 75, 0.6); } }
+  a.boton-subir i {
+    color: #fff;
+    font-size: 1.5em;
+    transform: rotate(-45deg); }
+
+
+/*=====  End of Boton para mover a la parte superior  ======*/
+
 
 
 /*========================================
